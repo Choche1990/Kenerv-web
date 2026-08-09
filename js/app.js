@@ -31,8 +31,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (!response.ok) throw new Error(`Respuesta inesperada del servidor (${response.status})`);
 
-      message.textContent = `Gracias. Registramos ${payload.email} para el KENERV Intelligence Brief.`;
-      form.reset();
+      let data = null;
+      try { data = await response.json(); } catch (_) { data = null; }
+
+      if (data && data.status === 'already_registered') {
+        message.style.color = 'var(--danger)';
+        message.textContent = data.message || 'Este correo ya se encuentra suscrito al KENERV Intelligence Brief.';
+      } else {
+        message.textContent = (data && data.message) || `Gracias. Registramos ${payload.email} para el KENERV Intelligence Brief.`;
+        form.reset();
+      }
     } catch (error) {
       console.error('Error al enviar el formulario del newsletter:', error);
       message.style.color = 'var(--danger)';
