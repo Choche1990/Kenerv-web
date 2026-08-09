@@ -511,16 +511,7 @@
     <div class="container" style="margin-top:36px;padding-top:20px;border-top:1px solid var(--line);font-size:.78rem">© 2026 KENERV. Todos los derechos reservados.</div>
   </footer>
 
-  <script>
-    const form = document.getElementById('newsletterForm');
-    const message = document.getElementById('formMessage');
-    form.addEventListener('submit', function (event) {
-      event.preventDefault();
-      const email = new FormData(form).get('email');
-      message.textContent = `Gracias. Registramos ${email} para el KENERV Intelligence Brief.`;
-      form.reset();
-    });
-  </script>
+  <script src="js/app.js"></script>
 </body>
 </html>
 
