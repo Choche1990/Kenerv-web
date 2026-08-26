@@ -1,6 +1,6 @@
 // URL del webhook de n8n (test) que recibe las suscripciones del newsletter.
 // Solo responde mientras el workflow está en modo "Listen for test event" dentro del editor de n8n.
-const WEBHOOK_URL = "https://n8n-1sjl.srv1612224.hstgr.cloud/webhook-test/666f9da9-7a1a-4525-86da-64bbfd84579c";
+const WEBHOOK_URL = "https://n8n-1sjl.srv1612224.hstgr.cloud/webhook/666f9da9-7a1a-4525-86da-64bbfd84579c";
 
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('newsletterForm');
